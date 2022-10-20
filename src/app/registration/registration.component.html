@@ -1,0 +1,80 @@
+<body>
+<form action="" #r=ngForm>
+    <div>
+            <div class="form-group">
+        <ul>
+            <li>
+        BookName:
+        <input type="text" class="bookname" ngModel name="bname" required>
+        <div class ="error"*ngIf="r.controls['bname']?.['touched'] && r.controls['bname']?.['errors']">
+          <p>  Book Name Required! </p>
+        </div>
+    </li>
+        <li>
+        Details:
+        <input type="text" ngModel name="detail" required>
+        <div class = "error" *ngIf="r.controls['detail']?.['touched'] && r.controls['detail']?.['errors']">
+            <p>  Details Required! </p>
+          </div>
+    </li>
+
+        <li>
+        Autor:
+        <input type="text" ngModel name="autor" required>
+        <div class = "error"*ngIf="r.controls['autor']?.['touched'] && r.controls['autor']?.['errors']">
+            <p>  Autor Required! </p>
+          </div>
+        </li>
+        <li>
+        <label for="SELECT"> Publication: </label>
+        <input list="select" ngModel name="pub" required>
+            <datalist id="select">
+              <option value="Magazine">Magazine</option>
+              <option value="Book">Book</option>
+              <option value="Document">Document</option>
+            </datalist>
+            <div class = "error" *ngIf="r.controls['pub']?.['touched'] && r.controls['pub']?.['errors']">
+                <p> Select Publications! </p>
+              </div>
+        </li>
+             <li> Branch : <br>
+                
+                <input type="radio" id="html" name="fav_language" value="HTML">
+                   <label for="html">IT</label>
+                   <input type="radio" id="css" name="fav_language" value="CSS">
+                    <label for="css">Civil</label><br>
+                    <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                    <label for="javascript">ECE</label>
+                   <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                    
+                   <label for="javascript">Electrical</label>
+             </li>
+             <li>
+                Price:
+
+                <input type="number" ngModel name="pri" required>
+                <div class = "error" *ngIf="r.controls['pri']?.['touched'] && r.controls['pri']?.['errors']">
+                    <p>  Please enter the Price </p>
+                  </div>
+             </li>
+             <li>
+                Quantity:
+                <input type="number" ngModel name="Quanti" required>
+                <div class = "error" *ngIf="r.controls['Quanti']?.['touched'] && r.controls['Quanti']?.['errors']">
+                    <p>  Please enter Quantity!! </p>
+                  </div>
+             </li>
+             <li>
+                Book Photo:
+                <input type="file" ngModel name="bp" required>
+                <div class = "error" *ngIf="r.controls['bp']?.['touched'] && r.controls['bp']?.['errors']">
+                    <p>  Please attach photo of the Book </p>
+                  </div>
+             </li>
+              </ul>
+    </div>
+</div>
+
+</form>
+<button (click) = "addd()">ADD Book</button>
+</body>

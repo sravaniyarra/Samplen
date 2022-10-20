@@ -1,0 +1,28 @@
+
+ul{
+   
+    justify-content: flex-start;
+    gap:20px;
+    color:black;
+    height: 40px;
+    font-size: 20px;
+    list-style-type:none;
+    display: flex;
+    flex-direction: column;
+}
+a
+{
+    line-height: 40px;
+    color: rgb(47, 14, 47);
+    margin: 0 20px;
+    padding : 9px 9px;
+}
+ul li a {
+    text-decoration: none;
+}
+.active{
+    background-color: orange;
+}
+a:hover{
+    background-color: orange;
+}
